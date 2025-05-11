@@ -3,6 +3,10 @@
 ![Deep Research MCP](https://img.shields.io/badge/Release-v1.0.0-blue.svg)  
 [Download Releases](https://github.com/ali-kh7/deep-research-mcp/releases)
 
+<a href="https://glama.ai/mcp/servers/@ali-kh7/deep-research-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@ali-kh7/deep-research-mcp/badge" alt="Deep Research MCP server" />
+</a>
+
 Welcome to the **Deep Research MCP** repository! This project provides a server compliant with the Model Context Protocol (MCP). It is designed to facilitate comprehensive web research. By utilizing Tavily's Search and Crawl APIs, the server gathers detailed information on various topics and structures this data to support high-quality markdown document creation using large language models (LLMs).
 
 ## Table of Contents
