@@ -1,5 +1,6 @@
 # Deep Research MCP 🌐
 
+[![smithery badge](https://smithery.ai/badge/@ali-kh7/deep-research-mcp)](https://smithery.ai/server/@ali-kh7/deep-research-mcp)
 ![Deep Research MCP](https://img.shields.io/badge/Release-v1.0.0-blue.svg)  
 [Download Releases](https://github.com/ali-kh7/deep-research-mcp/releases)
 
@@ -24,6 +25,16 @@ Welcome to the **Deep Research MCP** repository! This project provides a server 
 - **Node.js and TypeScript**: Built using modern technologies for better performance and maintainability.
 
 ## Installation
+
+### Installing via Smithery
+
+To install Deep Research for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@ali-kh7/deep-research-mcp):
+
+```bash
+npx -y @smithery/cli install @ali-kh7/deep-research-mcp --client claude
+```
+
+### Manual Installation
 
 To get started with Deep Research MCP, follow these steps:
 
