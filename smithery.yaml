@@ -1,0 +1,54 @@
+# Smithery configuration file: https://smithery.ai/docs/build/project-config
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - tavilyApiKey
+    properties:
+      tavilyApiKey:
+        type: string
+        description: API key for Tavily
+      researchOutputPath:
+        type: string
+        description: Custom output path
+      documentationPrompt:
+        type: string
+        description: Custom documentation prompt
+      hardwareAcceleration:
+        type: boolean
+        default: false
+        description: Enable WebGPU acceleration
+      nodeOptions:
+        type: string
+        description: Additional NODE_OPTIONS
+      envVars:
+        type: object
+        description: Extra env vars
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({
+      command: "node",
+      args: ["dist/index.js"],
+      env: Object.assign(
+        {
+          TAVILY_API_KEY: config.tavilyApiKey,
+          RESEARCH_OUTPUT_PATH: config.researchOutputPath || undefined,
+          DOCUMENTATION_PROMPT: config.documentationPrompt || undefined,
+          HARDWARE_ACCELERATION: config.hardwareAcceleration ? 'true' : 'false',
+          NODE_OPTIONS: config.nodeOptions || ''
+        },
+        config.envVars || {}
+      )
+    })
+  exampleConfig:
+    tavilyApiKey: YOUR_KEY
+    researchOutputPath: /tmp/output
+    documentationPrompt: Custom prompt
+    hardwareAcceleration: false
+    nodeOptions: --max-old-space-size=512
+    envVars:
+      EXTRA: value
